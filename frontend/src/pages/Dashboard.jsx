@@ -96,7 +96,7 @@ function Dashboard() {
               <Statistic
                 title="Available"
                 value={availableCount}
-                valueStyle={{ color: '#3f8600' }}
+                styles={{ content: { color: '#3f8600' } }}
                 prefix={<CheckCircleOutlined />}
               />
             </Card>
@@ -106,7 +106,7 @@ function Dashboard() {
               <Statistic
                 title="Assigned"
                 value={assignedCount}
-                valueStyle={{ color: '#1677ff' }}
+                styles={{ content: { color: '#1677ff' } }}
                 prefix={<UserSwitchOutlined />}
               />
             </Card>
@@ -116,7 +116,7 @@ function Dashboard() {
               <Statistic
                 title="Maintenance"
                 value={maintenanceCount}
-                valueStyle={{ color: '#d46b08' }}
+                styles={{ content: { color: '#d46b08' } }}
                 prefix={<ToolOutlined />}
               />
             </Card>
