@@ -74,10 +74,10 @@ asset-management-system/
 │   │   ├── services/        # api.js, authService.js, assetService.js
 │   │   ├── App.jsx
 │   │   └── main.jsx
-│   └──.gitignore
-│   └──eslint.config.js
-│   └──index.html
-│   └──package-lock.json
+│   ├──.gitignore
+│   ├──eslint.config.js
+│   ├──index.html
+│   ├──package-lock.json
 │   └── package.json
 ├── database/
 │   ├── schema.sql           # Creates Users and Assets tables
