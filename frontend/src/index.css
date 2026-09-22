@@ -1,3 +1,27 @@
 body {
   margin: 0;
 }
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .ant-layout-sider,
+  .ant-layout-header,
+  .no-print {
+    display: none !important;
+  }
+
+  .ant-layout-content {
+    margin: 0 !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .ant-table-tbody > tr {
+    break-inside: avoid;
+  }
+}
