@@ -23,6 +23,18 @@ function AssetFormModal({ open, asset, onClose, onSuccess }) {
     }
   }, [open, asset, form])
 
+  function handleAssignedToChange(e) {
+  const value = e.target.value
+
+  if (value.trim()) {
+    form.setFieldValue('status', 'Assigned')
+  } else {
+    if (form.getFieldValue('status') === 'Assigned') {
+      form.setFieldValue('status', 'Available')
+    }
+  }
+}
+
   async function handleFinish(values) {
     const payload = {
       ...values,
@@ -93,7 +105,7 @@ function AssetFormModal({ open, asset, onClose, onSuccess }) {
         </Form.Item>
 
         <Form.Item label="Assigned To" name="assignedTo">
-          <Input placeholder="e.g. Juan Dela Cruz" />
+          <Input placeholder="e.g. Juan Dela Cruz" onChange={handleAssignedToChange} />
         </Form.Item>
 
         <Form.Item label="Purchase Date" name="purchaseDate">
