@@ -2,7 +2,7 @@ USE AssetManagementDB;
 GO
 
 INSERT INTO dbo.Users (Username, PasswordHash, Role)
-VALUES ('admin', 'PLACEHOLDER_WILL_BE_REPLACED_IN_PHASE_6', 'admin');
+VALUES ('admin', '$2b$10$F3b/VC8wPrfIrSvHvz2sZOy5A/fMjxXG0t9odLUHqtBRmDBB/FTMC', 'admin');
 GO
 
 INSERT INTO dbo.Assets (AssetCode, AssetName, Category, Brand, Status, AssignedTo, PurchaseDate)
