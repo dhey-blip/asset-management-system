@@ -1,22 +1,26 @@
-import { Button, Flex, Tag, Typography } from 'antd'
-
-const { Title, Paragraph } = Typography
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Login from './pages/login'
+import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
-    <div style={{ padding: 24, maxWidth: 600, margin: '0 auto' }}>
-      <Flex vertical gap="middle">
-        <Title level={2}>Asset Management System</Title>
-        <Paragraph>
-          Frontend setup test. If you can see a styled button and tag below,
-          React, Vite, and Ant Design are all working.
-        </Paragraph>
-        <Flex gap="small" align="center" wrap>
-          <Button type="primary">Test Button</Button>
-          <Tag color="success">Ant Design works</Tag>
-        </Flex>
-      </Flex>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        {/* Any unknown path sends the user to the dashboard,
+            which itself redirects to /login if not authenticated */}
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
